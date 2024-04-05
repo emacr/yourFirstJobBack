@@ -79,9 +79,9 @@ namespace yourFirstJobBackend.Logica
                     int? idReturn = 0;
                     int? errorId = 0;
                     string errorDescripcion = "";
-
+                    bool estado = true;
                     conexion.InsertUsuario(usuario.nombreUsuario, usuario.apellidos, usuario.correo, usuario.telefono,
-                        usuario.fechaNacimiento, usuario.idRegion, Utilitarios.encriptar(usuario.contrasena), ref errorId, ref errorDescripcion, ref idReturn);
+                        usuario.fechaNacimiento, usuario.idRegion, Utilitarios.encriptar(usuario.contrasena), estado, ref errorId, ref errorDescripcion, ref idReturn);
 
                     if (idReturn == 0)
                     {
@@ -381,7 +381,7 @@ namespace yourFirstJobBackend.Logica
             {
                 LinqDataContext conexion = new LinqDataContext();
                 //  int idUsuario = req.idUsuario;  Obtener el idUsuario desde el objeto req
-                int idUsuario = 10; //dato quemado
+                int idUsuario = 6; //dato quemado
                 int? errorOccured = 0;
                 string errorMessage = "";
                 int? lineasActualizadas = 0;
